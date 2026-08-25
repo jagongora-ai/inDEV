@@ -1,0 +1,98 @@
+spring:
+  application:
+    name: api-gateway
+
+  cloud:
+    gateway:
+      server:
+        webmvc:
+          routes:
+            - id: usuario-service
+              uri: lb://usuario-service
+              predicates:
+                - Path=/api/usuarios/**
+
+            - id: direccion-service
+              uri: lb://direccion-service
+              predicates:
+                - Path=/api/direcciones/**
+
+            - id: comuna-service
+              uri: lb://direccion-service
+              predicates:
+                - Path=/api/comunas/**
+
+            - id: estado-service
+              uri: lb://estado-service
+              predicates:
+                - Path=/api/estados/**
+
+            - id: producto-service
+              uri: lb://producto-service
+              predicates:
+                - Path=/api/productos/**
+
+            - id: categoria-service
+              uri: lb://producto-service
+              predicates:
+                - Path=/api/categorias/**
+
+            - id: pasillo-service
+              uri: lb://bodega-service
+              predicates:
+                - Path=/api/pasillos/**
+
+            - id: estante-service
+              uri: lb://bodega-service
+              predicates:
+                - Path=/api/estantes/**
+
+            - id: bodega-estructuras-service
+              uri: lb://bodega-service
+              predicates:
+                - Path=/api/bodega_estructuras/**
+
+            - id: productos-ubicaciones-service
+              uri: lb://bodega-service
+              predicates:
+                - Path=/api/productos_ubicaciones/**
+
+            - id: venta-service
+              uri: lb://venta-service
+              predicates:
+                - Path=/api/ventas/**
+
+            - id: detalle-service
+              uri: lb://venta-service
+              predicates:
+                - Path=/api/detalles/**
+
+            - id: envio-service
+              uri: lb://envio-service
+              predicates:
+                - Path=/api/envios/**
+
+            - id: configuracion-service
+              uri: lb://configuracion-service
+              predicates:
+                - Path=/api/configuraciones/**
+
+server:
+  port: 8080
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+logging:
+  file:
+    name: logs/api-gateway.txt
+  level:
+    root: INFO
+    org.springframework.cloud.gateway: DEBUG
+  pattern:
+    console: "%d{HH:mm:ss} %-5level %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} %-5level [%thread] %logger{36} - %msg%n"
