@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>VentasService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ventas</a> &gt; <a href="index.source.html" class="el_package">com.zenvok.Ventas.service</a> &gt; <span class="el_source">VentasService.java</span></div><h1>VentasService.java</h1><pre class="source lang-java linenums">package com.zenvok.Ventas.service;
+
+import com.zenvok.Ventas.client.EstadoClient;
+import com.zenvok.Ventas.client.UsuarioClient;
+import com.zenvok.Ventas.dto.EstadoResponseDTO;
+import com.zenvok.Ventas.dto.UsuarioResponseDTO;
+import com.zenvok.Ventas.dto.VentaRequestDTO;
+import com.zenvok.Ventas.dto.VentaResponseDTO;
+import com.zenvok.Ventas.model.Ventas;
+import com.zenvok.Ventas.repository.VentasRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+@Service
+@RequiredArgsConstructor
+public class VentasService {
+
+    private final VentasRepository ventasRepository;
+    private final UsuarioClient usuarioClient;
+    private final EstadoClient estadoClient;
+
+    @Transactional
+    public VentaResponseDTO guardar(VentaRequestDTO dto) {
+
+<span class="fc" id="L30">        UsuarioResponseDTO usuario = validarUsuarioExiste(dto.getUsuarioId());</span>
+<span class="fc" id="L31">        EstadoResponseDTO estado = validarEstadoExiste(dto.getEstadoId());</span>
+
+<span class="fc" id="L33">        Ventas venta = new Ventas();</span>
+<span class="fc" id="L34">        venta.setFechaVentas(dto.getFechaVentas());</span>
+<span class="fc" id="L35">        venta.setTotal(dto.getTotal());</span>
+<span class="fc" id="L36">        venta.setUsuarioId(dto.getUsuarioId());</span>
+<span class="fc" id="L37">        venta.setEstadoId(dto.getEstadoId());</span>
+
+<span class="fc" id="L39">        Ventas ventaGuardada = ventasRepository.save(venta);</span>
+
+<span class="fc" id="L41">        return mapearAResponse(ventaGuardada, usuario, estado);</span>
+    }
+
+    @Transactional(readOnly = true)
+    public List&lt;VentaResponseDTO&gt; obtenerTodas() {
+<span class="fc" id="L46">        return ventasRepository.findAll()</span>
+<span class="fc" id="L47">                .stream()</span>
+<span class="fc" id="L48">                .map(this::mapearAResponse)</span>
+<span class="fc" id="L49">                .collect(Collectors.toList());</span>
+    }
+
+    @Transactional(readOnly = true)
+    public Optional&lt;VentaResponseDTO&gt; obtenerPorId(Long id) {
+<span class="fc" id="L54">        return ventasRepository.findById(id)</span>
+<span class="fc" id="L55">                .map(this::mapearAResponse);</span>
+    }
+
+    private UsuarioResponseDTO validarUsuarioExiste(Long usuarioId) {
+        try {
+<span class="fc" id="L60">            UsuarioResponseDTO usuario = usuarioClient.buscarPorId(usuarioId);</span>
+
+<span class="pc bpc" id="L62" title="1 of 4 branches missed.">            if (usuario == null || usuario.getId() == null) {</span>
+<span class="fc" id="L63">                throw new RuntimeException(&quot;Usuario no encontrado con ID: &quot; + usuarioId);</span>
+            }
+
+<span class="fc" id="L66">            return usuario;</span>
+
+<span class="fc" id="L68">        } catch (Exception e) {</span>
+<span class="fc" id="L69">            throw new RuntimeException(&quot;Usuario no encontrado con ID: &quot; + usuarioId);</span>
+        }
+    }
+
+    private EstadoResponseDTO validarEstadoExiste(Long estadoId) {
+        try {
+<span class="fc" id="L75">            EstadoResponseDTO estado = estadoClient.buscarPorId(estadoId);</span>
+
+<span class="pc bpc" id="L77" title="1 of 4 branches missed.">            if (estado == null || estado.getId() == null) {</span>
+<span class="fc" id="L78">                throw new RuntimeException(&quot;Estado no encontrado con ID: &quot; + estadoId);</span>
+            }
+
+<span class="fc" id="L81">            return estado;</span>
+
+<span class="fc" id="L83">        } catch (Exception e) {</span>
+<span class="fc" id="L84">            throw new RuntimeException(&quot;Estado no encontrado con ID: &quot; + estadoId);</span>
+        }
+    }
+
+    private VentaResponseDTO mapearAResponse(Ventas venta) {
+
+<span class="fc" id="L90">        VentaResponseDTO response = new VentaResponseDTO();</span>
+
+<span class="fc" id="L92">        response.setId(venta.getIdVenta());</span>
+<span class="fc" id="L93">        response.setFechaVentas(venta.getFechaVentas());</span>
+<span class="fc" id="L94">        response.setTotal(venta.getTotal());</span>
+<span class="fc" id="L95">        response.setUsuarioId(venta.getUsuarioId());</span>
+<span class="fc" id="L96">        response.setEstadoId(venta.getEstadoId());</span>
+
+        try {
+<span class="fc" id="L99">            UsuarioResponseDTO usuario = usuarioClient.buscarPorId(venta.getUsuarioId());</span>
+<span class="fc" id="L100">            response.setUsuarioNombre(usuario.getNombre() + &quot; &quot; + usuario.getApellido());</span>
+<span class="fc" id="L101">        } catch (Exception e) {</span>
+<span class="fc" id="L102">            response.setUsuarioNombre(&quot;Usuario no disponible&quot;);</span>
+<span class="fc" id="L103">        }</span>
+
+        try {
+<span class="fc" id="L106">            EstadoResponseDTO estado = estadoClient.buscarPorId(venta.getEstadoId());</span>
+<span class="fc" id="L107">            response.setEstadoNombre(estado.getNombre());</span>
+<span class="fc" id="L108">        } catch (Exception e) {</span>
+<span class="fc" id="L109">            response.setEstadoNombre(&quot;Estado no disponible&quot;);</span>
+<span class="fc" id="L110">        }</span>
+<span class="fc" id="L111">        return response;</span>
+    }
+
+    private VentaResponseDTO mapearAResponse(
+            Ventas venta,
+            UsuarioResponseDTO usuario,
+            EstadoResponseDTO estado
+    ) {
+<span class="fc" id="L119">        VentaResponseDTO response = new VentaResponseDTO();</span>
+
+<span class="fc" id="L121">        response.setId(venta.getIdVenta());</span>
+<span class="fc" id="L122">        response.setFechaVentas(venta.getFechaVentas());</span>
+<span class="fc" id="L123">        response.setTotal(venta.getTotal());</span>
+
+<span class="fc" id="L125">        response.setUsuarioId(venta.getUsuarioId());</span>
+<span class="fc" id="L126">        response.setUsuarioNombre(usuario.getNombre() + &quot; &quot; + usuario.getApellido());</span>
+
+<span class="fc" id="L128">        response.setEstadoId(venta.getEstadoId());</span>
+<span class="fc" id="L129">        response.setEstadoNombre(estado.getNombre());</span>
+
+<span class="fc" id="L131">        return response;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.14.202510111229</span></div></body></html>

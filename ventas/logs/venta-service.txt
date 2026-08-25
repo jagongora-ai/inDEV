@@ -1,0 +1,129 @@
+2026-07-05 21:46:10 INFO  [main] c.z.V.c.DetalleControllerTest - Starting DetalleControllerTest using Java 21.0.11 with PID 23984 (started by trask in E:\Zenvok\venta)
+2026-07-05 21:46:10 DEBUG [main] c.z.V.c.DetalleControllerTest - Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-07-05 21:46:10 INFO  [main] c.z.V.c.DetalleControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-07-05 21:46:12 INFO  [main] o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-07-05 21:46:12 INFO  [main] o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-07-05 21:46:12 INFO  [main] o.s.t.w.s.TestDispatcherServlet - Completed initialization in 2 ms
+2026-07-05 21:46:12 INFO  [main] c.z.V.c.DetalleControllerTest - Started DetalleControllerTest in 2.915 seconds (process running for 4.582)
+2026-07-05 21:46:12 INFO  [main] c.z.V.controller.DetalleController - Petición recibida para crear detalle de venta
+2026-07-05 21:46:12 ERROR [main] c.z.V.e.GlobalExceptionHandler - Error interno en ruta /api/detalles/1: No static resource api/detalles/1 for request '/api/detalles/1'.
+2026-07-05 21:46:12 WARN  [main] c.z.V.e.GlobalExceptionHandler - Error de validación en ruta /api/detalles: [cantidad: La cantidad debe ser como mínimo 1]
+2026-07-05 21:46:12 INFO  [main] c.z.V.controller.DetalleController - Petición recibida para listar detalles de venta
+2026-07-05 21:46:12 INFO  [main] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.zenvok.Ventas.controller.VentasControllerTest]: VentasControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-07-05 21:46:13 INFO  [main] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.zenvok.Ventas.VentasApplication for test class com.zenvok.Ventas.controller.VentasControllerTest
+2026-07-05 21:46:13 INFO  [main] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.zenvok.Ventas.controller.VentasControllerTest]: VentasControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-07-05 21:46:13 INFO  [main] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.zenvok.Ventas.VentasApplication for test class com.zenvok.Ventas.controller.VentasControllerTest
+2026-07-05 21:46:13 INFO  [main] c.z.V.c.VentasControllerTest - Starting VentasControllerTest using Java 21.0.11 with PID 23984 (started by trask in E:\Zenvok\venta)
+2026-07-05 21:46:13 DEBUG [main] c.z.V.c.VentasControllerTest - Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-07-05 21:46:13 INFO  [main] c.z.V.c.VentasControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-07-05 21:46:13 INFO  [main] o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-07-05 21:46:13 INFO  [main] o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-07-05 21:46:13 INFO  [main] o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2026-07-05 21:46:13 INFO  [main] c.z.V.c.VentasControllerTest - Started VentasControllerTest in 0.326 seconds (process running for 5.528)
+2026-07-05 21:46:13 WARN  [main] c.z.V.e.GlobalExceptionHandler - Error de validación en ruta /api/ventas: [fechaVentas: La fecha de venta es obligatoria]
+2026-07-05 21:46:13 WARN  [main] c.z.V.e.GlobalExceptionHandler - Error controlado en ruta /api/ventas: No se pudo conectar con producto-service
+2026-07-05 21:46:13 WARN  [main] c.z.V.e.GlobalExceptionHandler - Error controlado en ruta /api/ventas: Error controlado
+2026-07-05 21:46:13 WARN  [main] c.z.V.e.GlobalExceptionHandler - Error controlado en ruta /api/detalles/99: Detalle no encontrado
+2026-07-05 21:46:13 WARN  [main] c.z.V.e.GlobalExceptionHandler - Error controlado en ruta /api/ventas: null
+2026-07-05 21:46:13 ERROR [main] c.z.V.e.GlobalExceptionHandler - Error interno en ruta /api/ventas: Error inesperado
+2026-07-05 21:46:13 WARN  [main] c.z.V.e.GlobalExceptionHandler - Error controlado en ruta /api/ventas/99: Venta no existe
+2026-07-05 21:46:13 INFO  [main] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.zenvok.Ventas.repository.DetalleRepositoryTest]: DetalleRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-07-05 21:46:13 INFO  [main] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.zenvok.Ventas.VentasApplication for test class com.zenvok.Ventas.repository.DetalleRepositoryTest
+2026-07-05 21:46:13 INFO  [main] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.zenvok.Ventas.repository.DetalleRepositoryTest]: DetalleRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-07-05 21:46:13 INFO  [main] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.zenvok.Ventas.VentasApplication for test class com.zenvok.Ventas.repository.DetalleRepositoryTest
+2026-07-05 21:46:13 INFO  [main] c.z.V.r.DetalleRepositoryTest - Starting DetalleRepositoryTest using Java 21.0.11 with PID 23984 (started by trask in E:\Zenvok\venta)
+2026-07-05 21:46:13 DEBUG [main] c.z.V.r.DetalleRepositoryTest - Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-07-05 21:46:13 INFO  [main] c.z.V.r.DetalleRepositoryTest - The following 1 profile is active: "test"
+2026-07-05 21:46:13 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-05 21:46:13 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 37 ms. Found 2 JPA repository interfaces.
+2026-07-05 21:46:13 INFO  [main] o.s.b.j.t.a.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor - Replacing 'dataSource' DataSource bean with embedded version
+2026-07-05 21:46:13 INFO  [main] o.s.j.d.e.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:0de4c0e9-968c-4cf9-a978-1b40fb254103;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2026-07-05 21:46:14 INFO  [main] org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-07-05 21:46:14 INFO  [main] org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-07-05 21:46:14 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-05 21:46:14 WARN  [main] org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-07-05 21:46:14 INFO  [main] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:0de4c0e9-968c-4cf9-a978-1b40fb254103]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: 0DE4C0E9-968C-4CF9-A978-1B40FB254103/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-05 21:46:15 INFO  [main] org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-05 21:46:15 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-05 21:46:15 INFO  [main] o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-07-05 21:46:16 INFO  [main] c.z.V.r.DetalleRepositoryTest - Started DetalleRepositoryTest in 3.294 seconds (process running for 8.959)
+2026-07-05 21:46:16 INFO  [main] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.zenvok.Ventas.repository.VentasRepositoryTest]: VentasRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-07-05 21:46:17 INFO  [main] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.zenvok.Ventas.VentasApplication for test class com.zenvok.Ventas.repository.VentasRepositoryTest
+2026-07-05 21:46:17 INFO  [main] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.zenvok.Ventas.repository.VentasRepositoryTest]: VentasRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-07-05 21:46:17 INFO  [main] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.zenvok.Ventas.VentasApplication for test class com.zenvok.Ventas.repository.VentasRepositoryTest
+2026-07-05 21:46:17 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-07-05 21:47:18 INFO  [main] c.z.V.c.DetalleControllerTest - Starting DetalleControllerTest using Java 21.0.11 with PID 37220 (started by trask in E:\Zenvok\venta)
+2026-07-05 21:47:18 DEBUG [main] c.z.V.c.DetalleControllerTest - Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-07-05 21:47:18 INFO  [main] c.z.V.c.DetalleControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-07-05 21:47:20 INFO  [main] o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-07-05 21:47:20 INFO  [main] o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-07-05 21:47:20 INFO  [main] o.s.t.w.s.TestDispatcherServlet - Completed initialization in 2 ms
+2026-07-05 21:47:20 INFO  [main] c.z.V.c.DetalleControllerTest - Started DetalleControllerTest in 2.911 seconds (process running for 4.639)
+2026-07-05 21:47:21 INFO  [main] c.z.V.controller.DetalleController - Petición recibida para crear detalle de venta
+2026-07-05 21:47:21 WARN  [main] c.z.V.e.GlobalExceptionHandler - Error de validación en ruta /api/detalles: [cantidad: La cantidad debe ser como mínimo 1]
+2026-07-05 21:47:21 INFO  [main] c.z.V.controller.DetalleController - Petición recibida para listar detalles de venta
+2026-07-05 21:47:21 INFO  [main] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.zenvok.Ventas.controller.VentasControllerTest]: VentasControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-07-05 21:47:21 INFO  [main] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.zenvok.Ventas.VentasApplication for test class com.zenvok.Ventas.controller.VentasControllerTest
+2026-07-05 21:47:21 INFO  [main] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.zenvok.Ventas.controller.VentasControllerTest]: VentasControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-07-05 21:47:21 INFO  [main] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.zenvok.Ventas.VentasApplication for test class com.zenvok.Ventas.controller.VentasControllerTest
+2026-07-05 21:47:21 INFO  [main] c.z.V.c.VentasControllerTest - Starting VentasControllerTest using Java 21.0.11 with PID 37220 (started by trask in E:\Zenvok\venta)
+2026-07-05 21:47:21 DEBUG [main] c.z.V.c.VentasControllerTest - Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-07-05 21:47:21 INFO  [main] c.z.V.c.VentasControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-07-05 21:47:21 INFO  [main] o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-07-05 21:47:21 INFO  [main] o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-07-05 21:47:21 INFO  [main] o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2026-07-05 21:47:21 INFO  [main] c.z.V.c.VentasControllerTest - Started VentasControllerTest in 0.389 seconds (process running for 5.628)
+2026-07-05 21:47:21 WARN  [main] c.z.V.e.GlobalExceptionHandler - Error de validación en ruta /api/ventas: [fechaVentas: La fecha de venta es obligatoria]
+2026-07-05 21:47:21 WARN  [main] c.z.V.e.GlobalExceptionHandler - Error controlado en ruta /api/ventas: No se pudo conectar con producto-service
+2026-07-05 21:47:21 WARN  [main] c.z.V.e.GlobalExceptionHandler - Error controlado en ruta /api/ventas: Error controlado
+2026-07-05 21:47:21 WARN  [main] c.z.V.e.GlobalExceptionHandler - Error controlado en ruta /api/detalles/99: Detalle no encontrado
+2026-07-05 21:47:21 WARN  [main] c.z.V.e.GlobalExceptionHandler - Error controlado en ruta /api/ventas: null
+2026-07-05 21:47:21 ERROR [main] c.z.V.e.GlobalExceptionHandler - Error interno en ruta /api/ventas: Error inesperado
+2026-07-05 21:47:21 WARN  [main] c.z.V.e.GlobalExceptionHandler - Error controlado en ruta /api/ventas/99: Venta no existe
+2026-07-05 21:47:21 INFO  [main] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.zenvok.Ventas.repository.DetalleRepositoryTest]: DetalleRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-07-05 21:47:21 INFO  [main] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.zenvok.Ventas.VentasApplication for test class com.zenvok.Ventas.repository.DetalleRepositoryTest
+2026-07-05 21:47:21 INFO  [main] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.zenvok.Ventas.repository.DetalleRepositoryTest]: DetalleRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-07-05 21:47:21 INFO  [main] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.zenvok.Ventas.VentasApplication for test class com.zenvok.Ventas.repository.DetalleRepositoryTest
+2026-07-05 21:47:21 INFO  [main] c.z.V.r.DetalleRepositoryTest - Starting DetalleRepositoryTest using Java 21.0.11 with PID 37220 (started by trask in E:\Zenvok\venta)
+2026-07-05 21:47:21 DEBUG [main] c.z.V.r.DetalleRepositoryTest - Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-07-05 21:47:21 INFO  [main] c.z.V.r.DetalleRepositoryTest - The following 1 profile is active: "test"
+2026-07-05 21:47:22 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-05 21:47:22 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 43 ms. Found 2 JPA repository interfaces.
+2026-07-05 21:47:22 INFO  [main] o.s.b.j.t.a.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor - Replacing 'dataSource' DataSource bean with embedded version
+2026-07-05 21:47:22 INFO  [main] o.s.j.d.e.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:24ff0e05-ac13-4dc3-877e-249527a42f40;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2026-07-05 21:47:22 INFO  [main] org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-07-05 21:47:22 INFO  [main] org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-07-05 21:47:23 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-05 21:47:23 WARN  [main] org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-07-05 21:47:23 INFO  [main] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:24ff0e05-ac13-4dc3-877e-249527a42f40]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: 24FF0E05-AC13-4DC3-877E-249527A42F40/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-05 21:47:24 INFO  [main] org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-05 21:47:24 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-05 21:47:24 INFO  [main] o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-07-05 21:47:25 INFO  [main] c.z.V.r.DetalleRepositoryTest - Started DetalleRepositoryTest in 3.239 seconds (process running for 9.022)
+2026-07-05 21:47:25 INFO  [main] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.zenvok.Ventas.repository.VentasRepositoryTest]: VentasRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-07-05 21:47:25 INFO  [main] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.zenvok.Ventas.VentasApplication for test class com.zenvok.Ventas.repository.VentasRepositoryTest
+2026-07-05 21:47:25 INFO  [main] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.zenvok.Ventas.repository.VentasRepositoryTest]: VentasRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-07-05 21:47:25 INFO  [main] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.zenvok.Ventas.VentasApplication for test class com.zenvok.Ventas.repository.VentasRepositoryTest
+2026-07-05 21:47:25 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'

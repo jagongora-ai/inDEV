@@ -1,0 +1,8 @@
+com\zenvok\Ventas\repository\DetalleRepositoryTest.class
+com\zenvok\Ventas\repository\VentasRepositoryTest.class
+com\zenvok\Ventas\exception\GlobalExceptionHandlerTest.class
+com\zenvok\Ventas\service\DetalleServiceTest.class
+com\zenvok\Ventas\VentasApplicationTests.class
+com\zenvok\Ventas\controller\VentasControllerTest.class
+com\zenvok\Ventas\controller\DetalleControllerTest.class
+com\zenvok\Ventas\service\VentaServiceTest.class
