@@ -1,0 +1,25 @@
+package com.zenvok.gestionusuario.repository;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+import com.zenvok.gestionusuario.model.Usuario;
+
+@Repository
+public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
+
+    @Query("SELECT u FROM Usuario u WHERE u.correo = :correo")
+    Optional<Usuario> buscarPorCorreo(@Param("correo")String Correo);
+    
+    @Query("SELECT u FROM Usuario u WHERE u.tipoUsuario.id = :idTipo")
+    List<Usuario> listarPorTipo(@Param("idTipo") Long idTipo);
+
+    @Query("SELECT u FROM Usuario u WHERE u.rut = :rut")
+    Optional<Usuario> buscarPorRut(@Param("rut")String rut);
+
+}
