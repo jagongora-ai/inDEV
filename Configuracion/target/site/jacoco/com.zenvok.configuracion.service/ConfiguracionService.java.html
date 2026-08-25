@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ConfiguracionService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">configuracion</a> &gt; <a href="index.source.html" class="el_package">com.zenvok.configuracion.service</a> &gt; <span class="el_source">ConfiguracionService.java</span></div><h1>ConfiguracionService.java</h1><pre class="source lang-java linenums">package com.zenvok.configuracion.service;
+
+import com.zenvok.configuracion.dto.ConfiguracionDTO;
+import com.zenvok.configuracion.model.Configuracion;
+import com.zenvok.configuracion.repository.ConfiguracionRepository;
+
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+<span class="fc" id="L17">@Slf4j</span>
+@Service
+@RequiredArgsConstructor
+public class ConfiguracionService {
+
+    private final ConfiguracionRepository repository;
+
+    @Transactional
+    public ConfiguracionDTO guardarConfiguracion(ConfiguracionDTO dto) {
+<span class="fc" id="L26">        log.info(&quot;Guardando configuración con clave: {}&quot;, dto.getClave());</span>
+
+<span class="fc bfc" id="L28" title="All 2 branches covered.">        if (repository.findByClave(dto.getClave()).isPresent()) {</span>
+<span class="fc" id="L29">            log.warn(&quot;Intento de crear configuración duplicada con clave: {}&quot;, dto.getClave());</span>
+<span class="fc" id="L30">            throw new RuntimeException(&quot;La clave ya existe: &quot; + dto.getClave());</span>
+        }
+
+<span class="fc" id="L33">        Configuracion conf = new Configuracion(null, dto.getClave(), dto.getValor());</span>
+<span class="fc" id="L34">        Configuracion saved = repository.save(conf);</span>
+
+<span class="fc" id="L36">        log.info(&quot;Configuración creada correctamente con id: {}&quot;, saved.getId());</span>
+
+<span class="fc" id="L38">        return mapearADTO(saved);</span>
+    }
+
+    @Transactional(readOnly = true)
+    public List&lt;ConfiguracionDTO&gt; obtenerTodas() {
+<span class="fc" id="L43">        log.info(&quot;Listando todas las configuraciones&quot;);</span>
+
+<span class="fc" id="L45">        List&lt;ConfiguracionDTO&gt; configuraciones = repository.findAll()</span>
+<span class="fc" id="L46">                .stream()</span>
+<span class="fc" id="L47">                .map(this::mapearADTO)</span>
+<span class="fc" id="L48">                .collect(Collectors.toList());</span>
+
+<span class="fc" id="L50">        log.info(&quot;Total de configuraciones encontradas: {}&quot;, configuraciones.size());</span>
+
+<span class="fc" id="L52">        return configuraciones;</span>
+    }
+
+    @Transactional(readOnly = true)
+    public Optional&lt;ConfiguracionDTO&gt; obtenerPorClave(String clave) {
+<span class="fc" id="L57">        log.info(&quot;Buscando configuración por clave: {}&quot;, clave);</span>
+
+<span class="fc" id="L59">        Optional&lt;ConfiguracionDTO&gt; configuracion = repository.findByClave(clave)</span>
+<span class="fc" id="L60">                .map(this::mapearADTO);</span>
+
+<span class="fc bfc" id="L62" title="All 2 branches covered.">        if (configuracion.isEmpty()) {</span>
+<span class="fc" id="L63">            log.warn(&quot;Configuración no encontrada con clave: {}&quot;, clave);</span>
+        }
+
+<span class="fc" id="L66">        return configuracion;</span>
+    }
+
+    @Transactional
+    public ConfiguracionDTO modificarConfiguracion(String clave, ConfiguracionDTO dto) {
+<span class="fc" id="L71">        log.info(&quot;Actualizando configuración con clave: {}&quot;, clave);</span>
+
+<span class="fc" id="L73">        Configuracion conf = repository.findByClave(clave)</span>
+<span class="fc" id="L74">                .orElseThrow(() -&gt; {</span>
+<span class="fc" id="L75">                    log.warn(&quot;No se puede actualizar. Configuración no encontrada con clave: {}&quot;, clave);</span>
+<span class="fc" id="L76">                    return new RuntimeException(&quot;Clave no encontrada: &quot; + clave);</span>
+                });
+
+<span class="fc" id="L79">        conf.setValor(dto.getValor());</span>
+
+<span class="fc" id="L81">        Configuracion updated = repository.save(conf);</span>
+
+<span class="fc" id="L83">        log.info(&quot;Configuración actualizada correctamente con id: {}&quot;, updated.getId());</span>
+
+<span class="fc" id="L85">        return mapearADTO(updated);</span>
+    }
+
+    private ConfiguracionDTO mapearADTO(Configuracion configuracion) {
+<span class="fc" id="L89">        return new ConfiguracionDTO(</span>
+<span class="fc" id="L90">                configuracion.getId(),</span>
+<span class="fc" id="L91">                configuracion.getClave(),</span>
+<span class="fc" id="L92">                configuracion.getValor()</span>
+        );
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.14.202510111229</span></div></body></html>

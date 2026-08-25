@@ -1,0 +1,27 @@
+2026-07-05 21:42:16 INFO  [main] c.z.c.c.ConfiguracionControllerTest - Starting ConfiguracionControllerTest using Java 21.0.11 with PID 6484 (started by trask in E:\Zenvok\Configuracion)
+2026-07-05 21:42:16 DEBUG [main] c.z.c.c.ConfiguracionControllerTest - Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-07-05 21:42:16 INFO  [main] c.z.c.c.ConfiguracionControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-07-05 21:42:18 INFO  [main] o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-07-05 21:42:18 INFO  [main] o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-07-05 21:42:18 INFO  [main] o.s.t.w.s.TestDispatcherServlet - Completed initialization in 4 ms
+2026-07-05 21:42:19 INFO  [main] c.z.c.c.ConfiguracionControllerTest - Started ConfiguracionControllerTest in 3.128 seconds (process running for 5.277)
+2026-07-05 21:42:19 WARN  [main] c.z.c.e.GlobalExceptionHandler - Error controlado en ruta /api/configuraciones: La clave ya existe: iva
+2026-07-05 21:42:19 WARN  [main] c.z.c.e.GlobalExceptionHandler - Error controlado en ruta /api/configuraciones/clave/iva: Clave no encontrada: iva
+2026-07-05 21:42:19 WARN  [main] c.z.c.e.GlobalExceptionHandler - Error controlado en ruta /api/configuraciones: null
+2026-07-05 21:42:19 ERROR [main] c.z.c.e.GlobalExceptionHandler - Error interno en ruta /api/configuraciones: Error inesperado
+2026-07-05 21:42:19 WARN  [main] c.z.c.e.GlobalExceptionHandler - Error controlado en ruta /api/configuraciones/clave/descuento: La clave no existe
+2026-07-05 21:42:19 INFO  [main] c.z.c.service.ConfiguracionService - Actualizando configuración con clave: iva
+2026-07-05 21:42:19 WARN  [main] c.z.c.service.ConfiguracionService - No se puede actualizar. Configuración no encontrada con clave: iva
+2026-07-05 21:42:19 INFO  [main] c.z.c.service.ConfiguracionService - Buscando configuración por clave: descuento
+2026-07-05 21:42:19 WARN  [main] c.z.c.service.ConfiguracionService - Configuración no encontrada con clave: descuento
+2026-07-05 21:42:19 INFO  [main] c.z.c.service.ConfiguracionService - Actualizando configuración con clave: iva
+2026-07-05 21:42:19 INFO  [main] c.z.c.service.ConfiguracionService - Configuración actualizada correctamente con id: 1
+2026-07-05 21:42:19 INFO  [main] c.z.c.service.ConfiguracionService - Guardando configuración con clave: iva
+2026-07-05 21:42:19 INFO  [main] c.z.c.service.ConfiguracionService - Configuración creada correctamente con id: 1
+2026-07-05 21:42:19 INFO  [main] c.z.c.service.ConfiguracionService - Listando todas las configuraciones
+2026-07-05 21:42:19 INFO  [main] c.z.c.service.ConfiguracionService - Total de configuraciones encontradas: 0
+2026-07-05 21:42:19 INFO  [main] c.z.c.service.ConfiguracionService - Guardando configuración con clave: iva
+2026-07-05 21:42:19 WARN  [main] c.z.c.service.ConfiguracionService - Intento de crear configuración duplicada con clave: iva
+2026-07-05 21:42:19 INFO  [main] c.z.c.service.ConfiguracionService - Listando todas las configuraciones
+2026-07-05 21:42:19 INFO  [main] c.z.c.service.ConfiguracionService - Total de configuraciones encontradas: 1
+2026-07-05 21:42:19 INFO  [main] c.z.c.service.ConfiguracionService - Buscando configuración por clave: iva
