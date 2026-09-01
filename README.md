@@ -35,7 +35,7 @@ git checkout -b feature/nueva-funcionalidad
 
 # Desarrollar y realizar commits
 git add .
-git commit -m "feat: agregar funcionalidad X"
+git commit -m "feat: agregar funcionalidad"
 
 # Subir cambios al repositorio
 git push origin feature/nueva-funcionalidad
