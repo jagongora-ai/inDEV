@@ -1,0 +1,40 @@
+name : Aplicacion de servicios
+
+on:
+  push:
+    branches: [ "develop" ]
+  pull_request:
+    branches: [ main ]
+
+  jobs:
+    build:
+      runs-on: ubuntu-latest
+
+      steps:
+   
+        - name: Checkout
+          uses: actions/checkout@v7
+
+        - name : Verifica contenido del repositorio
+          run : |
+            echo "Contenido del repositorio:"
+            tree
+
+        - name : Set up JDK 21
+          uses: actions/setup-java@v6
+          with:
+              java-version: '21'
+              distribution: 'temurin'
+              cache: 'maven'
+        - name: copilando y ejecitando los test unitarios
+          run: mvn -B package -- file bodega/pon.xml
+
+        - name : Resultado
+        run : |
+          echo "Resultado de la compilacion y test unitarios:"
+          echo "pruebas unitarias ejecutadas correctamente"
+         
+
+
+
+         
